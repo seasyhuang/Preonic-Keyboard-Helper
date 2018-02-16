@@ -3,10 +3,28 @@ def main():
     l - print keyboard layout
     s - common shortcuts that you keep forgetting
     m - randomly generated motivational message
+    f - freeze google inspector 
     ----------------------------------------
     Please enter a command:
     >>> ''')
     type(cmd)
+    
+    if (cmd == 'l'):
+        layout()
+        main()
+    elif (cmd == 's'):
+        shortcuts()
+        main()
+    elif (cmd == 'm'):
+        randomMessage()
+        main()
+    elif (cmd == 'f'):
+        freeze()
+        main()
+    elif (cmd == 'q'):
+        quit()
+    else:
+        main()
     
 #     choices = {
 #         'l': layout(),
@@ -37,6 +55,12 @@ def randomMessage():
 def shortcuts():
     print ("Run code (eclipse): CTRL + LOWER + B // CTRL + F11")
     
+def freeze():
+    freeze = '''
+    setTimeout(function(){debugger;}, 5000)
+    '''
+    print freeze
+
 # -----------------------
 
 if __name__ == "__main__":
